@@ -1,5 +1,7 @@
 package com.broadway.springbootEMS.model;
 
+import com.broadway.springbootEMS.contants.Role;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,5 +18,5 @@ private String firstName;
 private String lastName;
 private String username;
 private String password;
-private String role;
+private Role role;
 }

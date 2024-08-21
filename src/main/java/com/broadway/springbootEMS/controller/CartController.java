@@ -36,6 +36,10 @@ public class CartController {
 
 	@GetMapping("/addToCart")
 	private String addToCart(@RequestParam int id, HttpSession  session, Model model) {
+		if(session.getAttribute("validuser")==null) {
+			return "LoginForm";
+		}
+		else {
 
 		System.out.println(session.getAttribute("validuser"));
 
@@ -63,6 +67,7 @@ public class CartController {
 		//		model.addAttribute("size", c.size());
 		//		model.addAttribute("cList", cs.getAllCart());
 		return "redirect:/cHome";
+		}
 	}
 	@GetMapping("/cart")
 	private String getCart( Model model, HttpSession session) {

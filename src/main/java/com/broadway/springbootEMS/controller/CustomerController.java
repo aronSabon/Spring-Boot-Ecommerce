@@ -38,20 +38,9 @@ public class CustomerController {
 
 	@PostMapping("/search")
 	private String getSearch(Model model,@RequestParam String search) {
-		System.out.println(search);
-		System.out.println(search);
-		System.out.println(search);
-		System.out.println(search);
-		System.out.println(search);
-		System.out.println(search);
 
 		List<Product> sList=pr.findAll(search);
-		System.out.println(sList);
-		System.out.println(sList);
-		System.out.println(sList);
-		System.out.println(sList);
-		System.out.println(sList);
-		System.out.println(sList);
+	
 
 		model.addAttribute("sList",sList);
 		return "Search";

@@ -63,6 +63,7 @@ public class EmployeeRestController {
 //		return "Name= "+emps[0].getFirstName()+" "+emps[0].getLastName();
 		return null;
 	}
+	//     localhost:8080/api/emp/pload        use this url when using the application for first time
 	@GetMapping("/api/emp/pload")
 	public String loadProducts() {
 		RestTemplate rest= new RestTemplate();

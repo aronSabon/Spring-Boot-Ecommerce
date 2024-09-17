@@ -55,7 +55,7 @@ public class UserController {
 						log.info(" user login success");
 						session.setAttribute("validuser", u);
 						session.setMaxInactiveInterval(10*60);						
-						if(u.getRole().equals("ADMIN")) {
+						if(u.getRole().equals(Role.ADMIN)) {
 							return "Home";
 						}
 						else {

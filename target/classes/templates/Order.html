@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<th:block th:insert="header.html"></th:block>
+
+	<div class="container-fluid">
+		<div class="card">
+			<div class="card-header text-center bg-primary text-white">
+				<h1>Orders List</h1>
+			</div>
+			<div class="card-body bg-secondary">
+				<table class="table table-float">
+					<thead>
+						<tr>
+							<th>User Id</th>
+							<th>Date And Time</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="a:${aList}">
+							<td>[[${a.user.id}]]</td>
+							<td>[[${a.date}]]</td>            <!-- ,(did=${a.id}) -->
+							<td><a th:href="@{/orderDetails(dId=${a.id})}"><input type="submit" value="Details"
+									class="btn btn-warning"></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="card-footer bg-warning">@copyright2000</div>
+		</div>
+	</div>
+</body>
+</html>

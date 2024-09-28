@@ -56,6 +56,7 @@ public class DeliveryController {
 		}	
 		deliveryAddress.setProductsIdList(productlist);
 		                   //for quantity List
+		//khkhg
 		List<Integer> quantityList=new ArrayList<>();
 		for(Cart c:cart) {
 			 quantityList.add(c.getQuantity());

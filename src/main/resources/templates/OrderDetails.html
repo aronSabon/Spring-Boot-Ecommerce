@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
 
 <!-- Google font -->
 <link
@@ -35,143 +36,156 @@
 
 </head>
 <body>
-<th:block th:insert="header.html"></th:block>
+	<th:block th:insert="header.html"></th:block>
 
 	<div class="container-fluid">
 		<div class="card">
 			<div class="card-header text-center bg-primary text-white">
 				<h1>Orders List</h1>
 			</div>
-			
-			
-				<!-- SECTION -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<form action="/placeOrder" method="post">
-			<div class="row">
 
-				<div class="col-md-7">
-					<!-- Billing Details -->
-					<div class="billing-details" th:object="${deliveryAddress}">
-						<div class="section-title">
-							<h3 class="title">Delivery Address</h3>
-						</div>
-						<div class="form-group">
-							<input class="input" type="text" name="firstName"
-								th:field="*{firstName}" readonly>
-						</div>
-						<div class="form-group">
-							<input class="input" type="text" name="lastName"
-								th:field="*{lastName}" readonly>
-						</div>
-						<div class="form-group">
-							<input class="input" type="email" name="email"
-								th:field="*{email}" readonly>
-						</div>
-						<div class="form-group">
-							<input class="input" type="text" name="address"
-								th:field="*{address}" readonly>
-						</div>
-						<div class="form-group">
-							<input class="input" type="text" name="city" th:field="*{city}" readonly>
-						</div>
-						<div class="form-group">
-							<input class="input" type="text" name="country"
-								th:field="*{country}" readonly>
-						</div>
-						<div class="form-group">
-							<input class="input" type="text" name="zipCode"
-								th:field="*{zipCode}" readonly>
-						</div>
-						<div class="form-group">
-							<input class="input" type="tel" name="telephone"
-								th:field="*{telephone}" readonly>
-						</div>
-						<div class="form-group">
-							<div class="input-checkbox">
-								
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt.</p>
-									<input class="input" type="password" name="password"
-										placeholder="Enter Your Password">
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Billing Details -->
-	<!-- Order notes -->
-					<div class="order-notes">
-						<textarea class="input" placeholder="Order Notes"></textarea>
-					</div>
-					<!-- /Order notes -->
-					
-				</div>
 
-				<!-- Order Details -->
-				<div class="col-md-5 order-details">
-					<div class="section-title text-center">
-						<h3 class="title">Orders</h3>
-					</div>
-					<div class="order-summary">
-						<div class="order-col">
-							<div>
-								<strong>PRODUCT</strong>
-							</div>
-							
-							<div>
-								<strong>TOTAL</strong>
-							</div>
-						</div>
-						<hr>
-						<div th:each="p : ${deliveryAddress.productsIdList}" class="order-products">
-							<div class="order-col">
-								<div class="row">
-									<div>
-										<img alt="" th:src="@{${p.image}}" width="50px">
+			<!-- SECTION -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<form action="/placeOrder" method="post">
+						<div class="row">
+
+							<div class="col-md-7">
+								<!-- Billing Details -->
+								<div class="billing-details" th:object="${deliveryAddress}">
+									<div class="section-title">
+										<h3 class="title">Delivery Address</h3>
+									</div>
+									<div class="form-group">
+										<input class="input" type="text" name="firstName"
+											th:field="*{firstName}" readonly>
+									</div>
+									<div class="form-group">
+										<input class="input" type="text" name="lastName"
+											th:field="*{lastName}" readonly>
+									</div>
+									<div class="form-group">
+										<input class="input" type="email" name="email"
+											th:field="*{email}" readonly>
+									</div>
+									<div class="form-group">
+										<input class="input" type="text" name="address"
+											th:field="*{address}" readonly>
+									</div>
+									<div class="form-group">
+										<input class="input" type="text" name="city"
+											th:field="*{city}" readonly>
+									</div>
+									<div class="form-group">
+										<input class="input" type="text" name="country"
+											th:field="*{country}" readonly>
+									</div>
+									<div class="form-group">
+										<input class="input" type="text" name="zipCode"
+											th:field="*{zipCode}" readonly>
+									</div>
+									<div class="form-group">
+										<input class="input" type="tel" name="telephone"
+											th:field="*{telephone}" readonly>
+									</div>
+									<div class="form-group">
+										<div class="input-checkbox">
+
+											<div class="caption">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
+													elit, sed do eiusmod tempor incididunt.</p>
+												<input class="input" type="password" name="password"
+													placeholder="Enter Your Password">
+											</div>
+										</div>
 									</div>
 								</div>
-								<div>[[${p.title}]]</div>
-								<div>[[${p.price}]]</div>
-							</div>
-							<hr>
+								<!-- /Billing Details -->
+								<!-- Order notes -->
+								<div class="order-notes">
+									<textarea class="input" placeholder="Order Notes"></textarea>
+								</div>
+								<!-- /Order notes -->
 
-						</div> 
-
-						<div class="order-col">
-							<div>Shiping</div>
-							<div>
-								<strong>FREE</strong>
 							</div>
+
+							<!-- Order Details -->
+							<div class="col-md-5 order-details">
+								<div class="section-title text-center">
+									<h3 class="title">Orders</h3>
+								</div>
+								<div class="order-summary">
+									<!-- Header Row -->
+									<div class="order-col row text-center">
+										<div class="col-3">
+											<strong>Product</strong>
+										</div>
+										<div class="col-3">
+											<strong>Title</strong>
+										</div>
+										<div class="col-2">
+											<strong>Price</strong>
+										</div>
+										<div class="col-2">
+											<strong>Quantity</strong>
+										</div>
+										<div class="col-2">
+											<strong>Total</strong>
+										</div>
+									</div>
+									<hr>
+
+									<!-- Products Loop -->
+									<div th:each="p, object : ${deliveryAddress.productsIdList}"
+										class="order-products">
+										<div class="order-col row text-center align-items-center">
+											<div class="col-3">
+												<img alt="" th:src="@{${p.image}}" width="50px">
+											</div>
+											<div class="col-3">[[${p.title}]]</div>
+											<div class="col-2">[[${p.price}]]</div>
+											<div class="col-2">[[${deliveryAddress.quantity[object.index]}]]</div>
+											<div class="col-2">[[${p.price *
+												deliveryAddress.quantity[object.index]}]]</div>
+										</div>
+										<hr>
+									</div>
+
+									<!-- Shipping -->
+									<div class="order-col row text-center">
+										<div class="col-6">
+											<strong>Shipping</strong>
+										</div>
+										<div class="col-6">
+											<strong>FREE</strong>
+										</div>
+									</div>
+
+									<!-- Total -->
+									<div class="order-col row text-center">
+										<div class="col-6">
+											<strong>Total</strong>
+										</div>
+										<div class="col-6">
+											<strong class="order-total">$[[${deliveryAddress.total}]]</strong>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- /Order Details -->
 						</div>
-						<div  class="order-col">
-						
-							<div>
-								<strong>TOTAL</strong>
-							</div>
-							<div>
-								<strong class="order-total">$[[${deliveryAddress.total}]]</strong>
-							</div>
-						</div>
-					</div>
-					
-					
-
-				
-					
- 				</div>
-				<!-- /Order Details -->
+					</form>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
 			</div>
-			</form>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-			
-			
-			
+
+
+
 			<div class="card-footer bg-warning">@copyright2000</div>
 		</div>
 	</div>

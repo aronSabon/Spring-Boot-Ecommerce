@@ -55,12 +55,12 @@ public class DeliveryController {
 			 productlist.add(c.getProduct());
 		}	
 		deliveryAddress.setProductsIdList(productlist);
-		                   //for quantity List
-//		List<Integer> quantityList=new ArrayList<>();
-//		for(Cart c:cart) {
-//			 quantityList.add(c.getQuantity());
-//		}
-//		deliveryAddress.setQuantity(quantityList);
+//		                   for quantity List
+		List<Integer> quantityList=new ArrayList<>();
+		for(Cart c:cart) {
+			 quantityList.add(c.getQuantity());
+		}
+		deliveryAddress.setQuantity(quantityList);
 		
 		
 		das.addBillingAddress(deliveryAddress);
